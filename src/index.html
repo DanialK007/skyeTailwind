@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- npx tailwindcss -i ./src/style.css -o ./public/style.css --watch -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexa</title>
+    <link rel="icon" href="../public/img/tailus.webp">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen dark:bg-black bg-gradient-to-br dark:from-gray-900 dark:to-black" id="body">
+
+    <!-- Alert -->
+    <div class="pointer-events-none fixed z-40 inset-x-0 bottom-0 px-6 pb-6" id="alert">
+        <div
+            class="pointer-events-auto ms-auto max-w-xl rounded-xl bg-blue-100 dark:bg-transparent hover:backdrop-blur-3xl duration-1000 dark:border-gray-800 border backdrop-blur-md p-6 shadow-lg ring-1 ring-gray-900/10">
+            <p class="text-sm leading-6 text-gray-900 dark:text-gray-200">This website uses cookies to supplement a
+                balanced diet and
+                provide a much deserved reward to the senses after consuming bland but nutritious meals. Accepting our
+                cookies is optional but recommended, as they are delicious. See our <a href="#"
+                    class="font-semibold text-cyan-600 hover:text-cyan-700">cookie policy</a>.</p>
+            <div class="mt-4 flex items-center gap-x-5">
+                <button type="button" id="accept"
+                    class="rounded-md bg-blue-700 border dark:border-gray-600 dark:bg-blue-950 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Accept
+                    all</button>
+                <button type="button"
+                    class="text-sm font-semibold leading-6 bg-transparent text-gray-900 shadow-sm  hover:text-blue-700 dark:text-gray-500">Reject
+                    all</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header>
+        <nav
+            class="p-4 fixed border-b bg-transparent backdrop-blur-2xl duration-300 dark:border-gray-900 border-gray-200 z-50 top-0 left-0 w-full xl:px-28 lg:px-16 md:px-10 flex items-center justify-between text-blue-950 dark:text-gray-400 font-semibold">
+            <a href=""
+                class="text-2xl duration-300 bg-blue-600 dark:bg-gradient-to-r dark:from-blue-950 dark:to-gray-900 dark:hover:brightness-200 h-6 flex justify-center items-center px-2 rounded-lg font-bold italic">
+                <img src="../public/img/skyeLogo.png" alt="" class="h-4 inline-block">
+            </a>
+            <ul class="lg:flex hidden">
+                <li class="px-4 hover:text-blue-500 duration-100"><a href="">Home</a></li>
+                <li class="px-4 hover:text-blue-500 duration-100"><a href="">About</a></li>
+                <li class="px-4 hover:text-blue-500 duration-100"><a href="">Courses</a></li>
+                <li class="px-4 hover:text-blue-500 duration-100"><a href="">Blogs</a></li>
+                <li class="px-4 hover:text-blue-500 duration-100"><a href="">Contact</a></li>
+            </ul>
+            <div class="flex items-center justify-center">
+                <a href="" id="darkMode"
+                    class="border-2 text-gray-600 dark:shadow-sm hover:shadow-sm dark:border-gray-500 dark:text-blue-50 border-gray-400  dark:hover:text-yellow-500 duration-200 block me-4 w-8 h-8 rounded-full">
+                    <i class="bi bi-moon-fill active:rotate-180 active:scale-50 text-lg hover:-rotate-90 dark:hover:rotate-180 duration-500 flex items-center justify-center w-full h-full"
+                        id="darkIcon"></i></a>
+                <a href=""
+                    class="text-gray-500 hidden dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-blue-800 dark:hover:te shadow-white dark:shadow-sm duration-100 hover:text-blue-600 lg:flex items-center justify-center w-7 h-7 rounded-full"><i
+                        class="bi bi-person-circle text-3xl"></i></a>
+                <a href=""
+                    class="text-white bg-blue-600 dark:bg-gray-900 dark:border-2 border-gray-800 lg:hidden dark:text-blue-50 shadow-white dark:shadow-sm hover:rotate-180 duration-500 flex items-center justify-center w-8 h-8 rounded-full"><i
+                        class="bi bi-list text-2xl"></i></a>
+                <!-- <a href=""
+                    class="flex w-9 h-9 rounded-full items-center justify-center pe-1  hover:text-gray-500 duration-300">
+                    <i class="bi bi-box-arrow-right text-3xl"></i></a> -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero section -->
+        <div class="flex h-screen pt-14  justify-center relative items-end lg:pb-0 pb-10">
+            <div class="inline-block w-2/5"></div>
+            <img src="../public/img/team.svg" alt=""
+                class="lg:ps-20 h-2/3 lg:h-3/5 xl:h-4/6 lg:mb-24 px-5 dark:brightness-50 duration-700">
+
+            <div
+                class="absolute top-0 md:ps-20 md:pb-28 lg:pb-24 left-0 md:px-10 lg:w-5/6 lg:px-24 pt-40 lg:pt-56 xl:ps-32 xl:pe-60 h-full flex flex-col">
+                <div class="xl:text-8xl md:text-6xl lg:text-7xl font-semibold pb-6 text-blue-950 dark:text-gray-400">
+                    Unlock your
+                    <span class="text-blue-500 dark:to-blue-700">Future</span>
+                </div>
+                <p class="pe-60 xl:pe-60 text-xl dark:text-gray-500">
+                    Journey Beyond Boundaries with the Key of English Proficiency, Embrace Endless Possibilities. Open
+                    the Door to Limitless Opportunities Through the Power of English Learning.
+                </p>
+
+                <div
+                    class="md:w-80 md:px-2 md:py-2 lg:ps-5 lg:pe-2 shadow rounded-s-full rounded-e-full mt-8 bg-blue-50 border border-blue-100 dark:bg-transparent backdrop-blur-md dark:border-gray-800 flex justify-between items-center">
+                    <i
+                        class="bi bi-envelope-fill md:ms-4 md:me-1 lg:mx-2 text-2xl text-blue-950 dark:text-blue-400"></i>
+                    <input type="text" name="" id=""
+                        class="md:w-2/5 lg:w-1/2 p-1 bg-transparent outline-none dark:text-white">
+                    <button
+                        class="h-full bg-blue-600 hover:bg-blue-800 duration-300 py-2 p-3 rounded-s-full rounded-e-full text-white">Get
+                        Started</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- trusted companies -->
+        <div class="py-12 hidden md:block bg-blue-50 dark:bg-transparent backdrop-blur-3xl">
+            <div
+                class="uppercase text-center text-lg mb-8 font-semibold text-blue-950 dark:text-blue-100 dark:font-normal">
+                Learning Through Multiple Platforms
+            </div>
+            <div class="px-8 flex justify-around items-center">
+                <img src="../public/img/facebook.png" alt="" class="h-14">
+                <div>
+                    <img src="../public/img/messenger.webp" alt="" class="h-10 inline-block">
+                    <div class="inline font-bold text-xl text-violet-600">Messenger</div>
+                </div>
+                <img src="../public/img/zoom.png" alt="" class="h-16">
+                <img src="../public/img/discord.png" alt="" class="h-7">
+                <div>
+                    <img src="../public/img/telegram.webp" alt="" class="h-10 inline-block">
+                    <div class="inline text-xl text-cyan-600 font-semibold">Telegram</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        const alert = document.querySelector("#alert")
+        const accept = document.querySelector("#accept")
+        accept.onclick = function (event) {
+            event.preventDefault()
+            alert.classList.add("hidden")
+        }
+
+        const darkMode = document.querySelector("#darkMode")
+        const darkIcon = document.querySelector("#darkIcon")
+        const body = document.querySelector("#body")
+        darkMode.onclick = function (event) {
+            event.preventDefault()
+            if (body.classList.contains("dark")) {
+                body.classList.remove("dark")
+                darkMode.classList.remove("whiteShadow")
+                darkIcon.classList.add("bi-moon-fill")
+                darkIcon.classList.remove("bi-brightness-high-fill")
+            } else {
+                body.classList.add("dark")
+                darkMode.classList.add("whiteShadow")
+                darkIcon.classList.remove("bi-moon-fill")
+                darkIcon.classList.add("bi-brightness-high-fill")
+            }
+        }
+    </script>
+</body>
+
+</html>
