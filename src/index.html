@@ -15,7 +15,7 @@
 <body class="min-h-screen dark:bg-black bg-gradient-to-br dark:from-gray-900 dark:to-black" id="body">
 
     <!-- Alert -->
-    <div class="pointer-events-none fixed z-40 inset-x-0 bottom-0 px-6 pb-6" id="alert">
+    <div class="hidden pointer-events-none fixed z-40 inset-x-0 bottom-0 px-6 pb-6" id="alert">
         <div
             class="pointer-events-auto ms-auto max-w-xl rounded-xl bg-blue-100 dark:bg-transparent hover:backdrop-blur-3xl duration-1000 dark:border-gray-800 border backdrop-blur-md p-6 shadow-lg ring-1 ring-gray-900/10">
             <p class="text-sm leading-6 text-gray-900 dark:text-gray-200">This website uses cookies to supplement a
@@ -36,8 +36,8 @@
 
     <!-- Navbar -->
     <header>
-        <nav
-            class="p-4 fixed border-b bg-transparent backdrop-blur-2xl duration-300 dark:border-gray-900 border-gray-200 z-50 top-0 left-0 w-full xl:px-28 lg:px-16 md:px-10 flex items-center justify-between text-blue-950 dark:text-gray-400 font-semibold">
+        <nav id="navbar"
+            class="p-4 fixed border-b bg-transparent backdrop-blur-xl duration-500 dark:border-gray-800 border-gray-200 z-50 top-0 left-0 w-full xl:px-28 lg:px-16 md:px-10 flex items-center justify-between text-blue-950 dark:text-gray-400 font-semibold">
             <a href=""
                 class="text-2xl duration-300 bg-blue-600 dark:bg-gradient-to-r dark:from-blue-950 dark:to-gray-900 dark:hover:brightness-200 h-6 flex justify-center items-center px-2 rounded-lg font-bold italic">
                 <img src="../public/img/skyeLogo.png" alt="" class="h-4 inline-block">
@@ -51,20 +51,108 @@
             </ul>
             <div class="flex items-center justify-center">
                 <a href="" id="darkMode"
-                    class="border-2 text-gray-600 dark:shadow-sm hover:shadow-sm dark:border-gray-500 dark:text-blue-50 border-gray-400  dark:hover:text-yellow-500 duration-200 block me-4 w-8 h-8 rounded-full">
+                    class="border-2 text-gray-500 dark:shadow-sm hover:shadow-sm dark:border-gray-400 dark:text-blue-50 border-gray-500  dark:hover:text-yellow-500 duration-200 block w-8 h-8 rounded-full">
                     <i class="bi bi-moon-fill active:rotate-180 active:scale-50 text-lg hover:-rotate-90 dark:hover:rotate-180 duration-500 flex items-center justify-center w-full h-full"
                         id="darkIcon"></i></a>
                 <a href=""
-                    class="text-gray-500 hidden dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-blue-800 dark:hover:te shadow-white dark:shadow-sm duration-100 hover:text-blue-600 lg:flex items-center justify-center w-7 h-7 rounded-full"><i
+                    class="text-gray-500 ms-4 hidden dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-blue-900 shadow-white dark:shadow-sm duration-100 hover:text-blue-600 lg:flex items-center justify-center w-7 h-7 rounded-full"><i
                         class="bi bi-person-circle text-3xl"></i></a>
-                <a href=""
-                    class="text-white bg-blue-600 dark:bg-gray-900 dark:border-2 border-gray-800 lg:hidden dark:text-blue-50 shadow-white dark:shadow-sm hover:rotate-180 duration-500 flex items-center justify-center w-8 h-8 rounded-full"><i
-                        class="bi bi-list text-2xl"></i></a>
+                <button id="menuBtn"
+                    class="text-gray-500 ms-4 dark:bg-gray-900 border-gray-500 border-2 dark:border-gray-400 lg:Gidden dark:text-blue-50 shadow-white dark:shadow-sm hover:rotate-180 duration-500 flex items-center justify-center w-8 h-8 rounded-full"><i
+                        class="bi bi-list text-2xl active:scale-50 duration-300"></i></button>
                 <!-- <a href=""
                     class="flex w-9 h-9 rounded-full items-center justify-center pe-1  hover:text-gray-500 duration-300">
                     <i class="bi bi-box-arrow-right text-3xl"></i></a> -->
             </div>
         </nav>
+
+        <div id="menu" class="fixed w-full h-full -z-50 opacity-0 duration-300">
+            <!-- top row -->
+            <div id="menuList"
+                class="-translate-y-96 lg:items-end lg:pe-32 relative duration-500 px-6 flex flex-col items-center py-24 w-full h-full bg-transparent ">
+                <div class="">
+                    <div class="flex justify-around w-96 py-2 px-4">
+                        <div
+                            class="w-40 h-40 scale-0 menuIcon duration-1000 flex flex-col justify-around border border-gray-300 bg-gray-500 dark:semiBgBlack semiBgBlack dark:backdrop-blur-3xl dark:border-gray-700 text-white rounded-3xl">
+                            <div class="flex gap-2 p-2">
+                                <a href="#" class="w-1/2 flex justify-center items-center">
+                                    <i
+                                        class="bi scale-0 menuIcon2 hover:bg-gray-800 duration-1000 bi-airplane-fill text-2xl flex w-14 h-14 rounded-full semiBgBlack2 dark:semiBgWhite2 items-center justify-center"></i>
+                                </a>
+                                <a href="#" class="w-1/2 flex justify-center items-center">
+                                    <i
+                                        class="bi scale-0 menuIcon2 hover:bg-gray-800 duration-1000 bi-broadcast-pin text-2xl flex w-14 h-14 rounded-full semiBgBlack2 dark:semiBgWhite2 items-center justify-center"></i>
+                                </a>
+                            </div>
+                            <div class="flex gap-2 p-2">
+                                <a href="#" class="w-1/2 flex justify-center items-center">
+                                    <i
+                                        class="bi scale-0 menuIcon2 hover:bg-gray-800 duration-1000 bi-wifi text-2xl flex w-14 h-14 rounded-full semiBgBlack2 dark:semiBgWhite2 items-center justify-center"></i>
+                                </a>
+                                <a href="#" class="w-1/2 flex justify-center items-center">
+                                    <i
+                                        class="bi scale-0 menuIcon2 hover:bg-gray-800 duration-1000 bi-bluetooth text-2xl flex w-14 h-14 rounded-full semiBgBlack2 dark:semiBgWhite2 items-center justify-center"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            class="w-40 h-40 scale-0 menuIcon duration-1000 flex flex-col justify-around border border-gray-300 bg-gray-500  dark:semiBgBlack semiBgBlack dark:backdrop-blur-3xl dark:border-gray-700 text-white rounded-3xl">
+                            <div class="flex gap-2 p-2">
+                                <a href="#" class="w-1/2 flex justify-center items-center">
+                                    <i
+                                        class="bi scale-0 menuIcon2 hover:bg-gray-800 duration-1000 bi-house text-2xl flex w-14 h-14 rounded-full semiBgBlack2 dark:semiBgWhite2 items-center justify-center"></i>
+                                </a>
+                                <a href="#" class="w-1/2 flex justify-center items-center">
+                                    <i
+                                        class="bi scale-0 menuIcon2 hover:bg-gray-800 duration-1000 bi-book text-2xl flex w-14 h-14 rounded-full semiBgBlack2 dark:semiBgWhite2 items-center justify-center"></i>
+                                </a>
+                            </div>
+                            <div class="flex gap-2 p-2">
+                                <a href="#" class="w-1/2 flex justify-center items-center">
+                                    <i
+                                        class="bi scale-0 menuIcon2 hover:bg-gray-800 duration-1000 bi-house text-2xl flex w-14 h-14 rounded-full semiBgBlack2 dark:semiBgWhite2 items-center justify-center"></i>
+                                </a>
+                                <a href="#" class="w-1/2 flex justify-center items-center">
+                                    <i
+                                        class="bi scale-0 menuIcon2 hover:bg-gray-800 duration-1000 bi-house text-2xl flex w-14 h-14 rounded-full semiBgBlack2 dark:semiBgWhite2 items-center justify-center"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- last row -->
+                    <div class="flex justify-around w-96 py-2 px-4">
+                        <div class="w-20 h-20 p-1 scale-0 menuIcon duration-1000">
+                            <a href="#"
+                                class="w-full h-full flex justify-center items-center text-white bg-gray-500 semiBgBlack dark:semiBgBlack border-gray-300 dark:backdrop-blur-3xl border dark:border-gray-700 rounded-2xl">
+                                <i class="bi scale-0 menuIcon duration-1000 bi-facebook text-2xl"></i>
+                            </a>
+                        </div>
+                        <div class="w-20 h-20 p-1 scale-0 menuIcon duration-1000">
+                            <a href="#"
+                                class="w-full h-full flex justify-center items-center text-white bg-gray-500 semiBgBlack dark:semiBgBlack border-gray-300 dark:backdrop-blur-3xl border dark:border-gray-700 rounded-2xl">
+                                <i class="bi scale-0 menuIcon duration-1000 bi-messenger text-2xl"></i>
+                            </a>
+                        </div>
+                        <div class="w-20 h-20 p-1 scale-0 menuIcon duration-1000">
+                            <a href="#"
+                                class="w-full h-full flex justify-center items-center text-white bg-gray-500 semiBgBlack dark:semiBgBlack border-gray-300 dark:backdrop-blur-3xl border dark:border-gray-700 rounded-2xl">
+                                <i class="bi scale-0 menuIcon duration-1000 bi-twitter text-2xl"></i>
+                            </a>
+                        </div>
+                        <div class="w-20 h-20 p-1 scale-0 menuIcon duration-1000">
+                            <a href="#"
+                                class="w-full h-full flex justify-center items-center text-white bg-gray-500 semiBgBlack dark:semiBgBlack border-gray-300 dark:backdrop-blur-3xl border dark:border-gray-700 rounded-2xl">
+                                <i class="bi scale-0 menuIcon duration-1000 bi-telegram text-3xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- close -->
+                    <button id="menuClose"
+                        class="absolute right-4 lg:right-28 -top-1 flex mt-5 bg-gray-200 dark:bg-gray-900 border dark:border-black text-gray-400 rounded-full w-8 h-8 items-center justify-center active:scale-95 duration-300">
+                        X</buttton>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -72,25 +160,26 @@
         <div class="flex h-screen pt-14  justify-center relative items-end lg:pb-0 pb-10">
             <div class="inline-block w-2/5"></div>
             <img src="../public/img/team.svg" alt=""
-                class="lg:ps-20 h-2/3 lg:h-3/5 xl:h-4/6 lg:mb-24 px-5 dark:brightness-50 duration-700">
+                class="pt-40 md:pt-0 lg:ps-20 h-2/3 lg:h-3/5 xl:h-4/6 lg:mb-24 px-5 dark:brightness-75 duration-700">
 
             <div
-                class="absolute top-0 md:ps-20 md:pb-28 lg:pb-24 left-0 md:px-10 lg:w-5/6 lg:px-24 pt-40 lg:pt-56 xl:ps-32 xl:pe-60 h-full flex flex-col">
-                <div class="xl:text-8xl md:text-6xl lg:text-7xl font-semibold pb-6 text-blue-950 dark:text-gray-400">
+                class="absolute p-8 top-0 md:ps-20 md:pb-28 lg:pb-24 left-0 md:px-10 lg:w-5/6 lg:px-24 pt-40 lg:pt-56 xl:ps-32 xl:pe-60 h-full flex flex-col">
+                <div
+                    class="text-4xl xl:text-8xl md:text-6xl lg:text-7xl font-semibold pb-6 text-blue-950 dark:text-gray-300">
                     Unlock your
                     <span class="text-blue-500 dark:to-blue-700">Future</span>
                 </div>
-                <p class="pe-60 xl:pe-60 text-xl dark:text-gray-500">
+                <p class="md:pe-60 xl:pe-60 text-xl dark:text-gray-500">
                     Journey Beyond Boundaries with the Key of English Proficiency, Embrace Endless Possibilities. Open
                     the Door to Limitless Opportunities Through the Power of English Learning.
                 </p>
 
                 <div
-                    class="md:w-80 md:px-2 md:py-2 lg:ps-5 lg:pe-2 shadow rounded-s-full rounded-e-full mt-8 bg-blue-50 border border-blue-100 dark:bg-transparent backdrop-blur-md dark:border-gray-800 flex justify-between items-center">
+                    class="ps-5 p-1 md:w-80 md:px-2 md:py-2 lg:ps-5 lg:pe-2 shadow rounded-s-full rounded-e-full mt-8 bg-blue-50 border border-blue-100 dark:bg-transparent backdrop-blur-md dark:border-gray-800 flex justify-between items-center">
                     <i
                         class="bi bi-envelope-fill md:ms-4 md:me-1 lg:mx-2 text-2xl text-blue-950 dark:text-blue-400"></i>
                     <input type="text" name="" id=""
-                        class="md:w-2/5 lg:w-1/2 p-1 bg-transparent outline-none dark:text-white">
+                        class="w-1/3 md:w-2/5 lg:w-1/2 p-1 bg-transparent outline-none dark:text-white">
                     <button
                         class="h-full bg-blue-600 hover:bg-blue-800 duration-300 py-2 p-3 rounded-s-full rounded-e-full text-white">Get
                         Started</button>
@@ -99,29 +188,608 @@
         </div>
 
         <!-- trusted companies -->
-        <div class="py-12 hidden md:block bg-blue-50 dark:bg-transparent backdrop-blur-3xl">
+        <div class="py-12 hidden md:block bg-blue-50 dark:bg-gray-900 backdrop-blur-3xl">
             <div
                 class="uppercase text-center text-lg mb-8 font-semibold text-blue-950 dark:text-blue-100 dark:font-normal">
                 Learning Through Multiple Platforms
             </div>
             <div class="px-8 flex justify-around items-center">
-                <img src="../public/img/facebook.png" alt="" class="h-14">
+                <img src="../public/img/facebook.png" alt="" class="h-14 brightness-110">
                 <div>
-                    <img src="../public/img/messenger.webp" alt="" class="h-10 inline-block">
-                    <div class="inline font-bold text-xl text-violet-600">Messenger</div>
+                    <img src="../public/img/messenger.webp" alt="" class="h-10 me-1 inline-block">
+                    <div class="inline font-bold text-xl text-violet-500">Messenger</div>
                 </div>
                 <img src="../public/img/zoom.png" alt="" class="h-16">
                 <img src="../public/img/discord.png" alt="" class="h-7">
                 <div>
                     <img src="../public/img/telegram.webp" alt="" class="h-10 inline-block">
-                    <div class="inline text-xl text-cyan-600 font-semibold">Telegram</div>
+                    <div class="inline text-xl text-cyan-500 font-semibold">Telegram</div>
                 </div>
             </div>
         </div>
+
+        <!-- component -->
+        <section>
+            <div class="py-16">
+                <div class="mx-auto px-6 max-w-6xl text-gray-500">
+                    <div class="text-center">
+                        <h2 class="text-3xl xl:text-4xl text-gray-950 dark:text-white font-semibold">Quickstart with
+                            boilerplates
+                        </h2>
+                        <p class="mt-6 text-gray-700 dark:text-gray-300">Harum quae dolore inventore repudiandae?
+                            orrupti aut temporibus ariatur.</p>
+                    </div>
+                    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                        <div
+                            class="relative group overflow-hidden duration-300 p-8 rounded-2xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                            <div aria-hidden="true"
+                                class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/3 duration-300 bg-gradient-to-b from-blue-500 to-white dark:from-white dark:to-white blur-2xl group-hover:opacity-50 opacity-25 dark:opacity-5 dark:group-hover:opacity-10">
+                            </div>
+                            <div class="relative">
+                                <div
+                                    class="border border-blue-500/10 flex relative *:relative *:size-6 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-blue-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
+                                    <svg class="text-[#000014] dark:text-white" xmlns="http://www.w3.org/2000/svg"
+                                        width="1em" height="1em" viewBox="0 0 128 128">
+                                        <defs>
+                                            <linearGradient id="deviconAstro0" x1="882.997" x2="638.955" y1="27.113"
+                                                y2="866.902" gradientTransform="scale(.1)"
+                                                gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" stop-color="currentColor"></stop>
+                                                <stop offset="1" stop-color="currentColor"></stop>
+                                            </linearGradient>
+                                            <linearGradient id="deviconAstro1" x1="1001.68" x2="790.326" y1="652.45"
+                                                y2="1094.91" gradientTransform="scale(.1)"
+                                                gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" stop-color="#ff1639"></stop>
+                                                <stop offset="1" stop-color="#ff1639" stop-opacity="0"></stop>
+                                            </linearGradient>
+                                        </defs>
+                                        <path fill="url(#deviconAstro0)"
+                                            d="M81.504 9.465c.973 1.207 1.469 2.836 2.457 6.09l21.656 71.136a90.079 90.079 0 0 0-25.89-8.765L65.629 30.28a1.833 1.833 0 0 0-3.52.004L48.18 77.902a90.104 90.104 0 0 0-26.003 8.778l21.758-71.14c.996-3.25 1.492-4.876 2.464-6.083a8.023 8.023 0 0 1 3.243-2.398c1.433-.575 3.136-.575 6.535-.575H71.72c3.402 0 5.105 0 6.543.579a7.988 7.988 0 0 1 3.242 2.402Zm0 0">
+                                        </path>
+                                        <path fill="#ff5d01"
+                                            d="M84.094 90.074c-3.57 3.055-10.696 5.137-18.903 5.137c-10.07 0-18.515-3.137-20.754-7.356c-.8 2.418-.98 5.184-.98 6.954c0 0-.527 8.675 5.508 14.71a5.671 5.671 0 0 1 5.672-5.671c5.37 0 5.367 4.683 5.363 8.488v.336c0 5.773 3.527 10.719 8.543 12.805a11.62 11.62 0 0 1-1.172-5.098c0-5.508 3.23-7.555 6.988-9.938c2.989-1.894 6.309-4 8.594-8.222a15.513 15.513 0 0 0 1.875-7.41a15.55 15.55 0 0 0-.734-4.735m0 0">
+                                        </path>
+                                        <path fill="url(#deviconAstro1)"
+                                            d="M84.094 90.074c-3.57 3.055-10.696 5.137-18.903 5.137c-10.07 0-18.515-3.137-20.754-7.356c-.8 2.418-.98 5.184-.98 6.954c0 0-.527 8.675 5.508 14.71a5.671 5.671 0 0 1 5.672-5.671c5.37 0 5.367 4.683 5.363 8.488v.336c0 5.773 3.527 10.719 8.543 12.805a11.62 11.62 0 0 1-1.172-5.098c0-5.508 3.23-7.555 6.988-9.938c2.989-1.894 6.309-4 8.594-8.222a15.513 15.513 0 0 0 1.875-7.41a15.55 15.55 0 0 0-.734-4.735m0 0">
+                                        </path>
+                                    </svg>
+                                </div>
+
+                                <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
+                                    <p class="text-gray-700 dark:text-gray-300">Amet praesentium deserunt ex commodi
+                                        tempore fuga voluptatem. Sit, sapiente.</p>
+                                </div>
+
+                                <div class="flex gap-3 -mb-8 py-4 border-t border-gray-200 dark:border-gray-800">
+                                    <a href="#" download="/"
+                                        class="group rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-950 bg-gray-100 hover:bg-gray-200/75 active:bg-gray-100 dark:text-white dark:bg-gray-500/10 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/10 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center">
+                                        <span>Download</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" d="m17 13l-5 5m0 0l-5-5m5 5V6">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                    <a href="#"
+                                        class="group flex items-center rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-950 bg-gray-100 hover:bg-gray-200/75 active:bg-gray-100 dark:text-white dark:bg-gray-500/10 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/10 size-8 justify-center">
+                                        <span class="sr-only">Source Code</span>
+                                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div href="#"
+                            class="relative group overflow-hidden duration-300 p-8 rounded-2xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                            <div aria-hidden="true"
+                                class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/3 duration-300 bg-gradient-to-b from-green-500 to-white dark:from-white dark:to-white blur-2xl group-hover:opacity-50 opacity-25 dark:opacity-5 dark:group-hover:opacity-10">
+                            </div>
+                            <div class="relative">
+                                <div
+                                    class="border border-green-500/10 flex relative *:relative *:size-6 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-green-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="0.98em" height="1em"
+                                        viewBox="0 0 256 263">
+                                        <defs>
+                                            <linearGradient id="logosSupabaseIcon0" x1="20.862%" x2="63.426%"
+                                                y1="20.687%" y2="44.071%">
+                                                <stop offset="0%" stop-color="#249361"></stop>
+                                                <stop offset="100%" stop-color="#3ecf8e"></stop>
+                                            </linearGradient>
+                                            <linearGradient id="logosSupabaseIcon1" x1="1.991%" x2="21.403%"
+                                                y1="-13.158%" y2="34.708%">
+                                                <stop offset="0%"></stop>
+                                                <stop offset="100%" stop-opacity="0"></stop>
+                                            </linearGradient>
+                                        </defs>
+                                        <path fill="url(#logosSupabaseIcon0)"
+                                            d="M149.602 258.579c-6.718 8.46-20.338 3.824-20.5-6.977l-2.367-157.984h106.229c19.24 0 29.971 22.223 18.007 37.292z">
+                                        </path>
+                                        <path fill="url(#logosSupabaseIcon1)" fill-opacity="0.2"
+                                            d="M149.602 258.579c-6.718 8.46-20.338 3.824-20.5-6.977l-2.367-157.984h106.229c19.24 0 29.971 22.223 18.007 37.292z">
+                                        </path>
+                                        <path fill="#3ecf8e"
+                                            d="M106.399 4.37c6.717-8.461 20.338-3.826 20.5 6.976l1.037 157.984H23.037c-19.241 0-29.973-22.223-18.008-37.292z">
+                                        </path>
+                                    </svg>
+                                </div>
+
+                                <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
+                                    <p class="text-gray-700 dark:text-gray-300">Amet praesentium deserunt ex commodi
+                                        tempore fuga voluptatem. Sit, sapiente.</p>
+                                </div>
+
+                                <div class="flex gap-3 -mb-8 py-4 border-t border-gray-200 dark:border-gray-800">
+                                    <a href="#" download="/"
+                                        class="group rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-950 bg-gray-100 hover:bg-gray-200/75 active:bg-gray-100 dark:text-white dark:bg-gray-500/10 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/10 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center">
+                                        <span>Download</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" d="m17 13l-5 5m0 0l-5-5m5 5V6">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                    <a href="#i"
+                                        class="group flex items-center rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-950 bg-gray-100 hover:bg-gray-200/75 active:bg-gray-100 dark:text-white dark:bg-gray-500/10 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/10 size-8 justify-center">
+                                        <span class="sr-only">Source Code</span>
+                                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="relative group overflow-hidden duration-300 p-8 rounded-2xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                            <div aria-hidden="true"
+                                class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/3 duration-300 bg-gradient-to-b from-red-500 to-white dark:from-white dark:to-white blur-2xl group-hover:opacity-50 opacity-25 dark:opacity-5 dark:group-hover:opacity-10">
+                            </div>
+                            <div class="relative">
+                                <div
+                                    class="border border-red-500/10 flex relative *:relative *:size-6 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-red-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="0.95em" height="1em"
+                                        viewBox="0 0 256 271">
+                                        <defs>
+                                            <linearGradient id="logosAngularIcon0" x1="25.071%" x2="96.132%"
+                                                y1="90.929%" y2="55.184%">
+                                                <stop offset="0%" stop-color="#e40035"></stop>
+                                                <stop offset="24%" stop-color="#f60a48"></stop>
+                                                <stop offset="35.2%" stop-color="#f20755"></stop>
+                                                <stop offset="49.4%" stop-color="#dc087d"></stop>
+                                                <stop offset="74.5%" stop-color="#9717e7"></stop>
+                                                <stop offset="100%" stop-color="#6c00f5"></stop>
+                                            </linearGradient>
+                                            <linearGradient id="logosAngularIcon1" x1="21.863%" x2="68.367%"
+                                                y1="12.058%" y2="68.21%">
+                                                <stop offset="0%" stop-color="#ff31d9"></stop>
+                                                <stop offset="100%" stop-color="#ff5be1" stop-opacity="0"></stop>
+                                            </linearGradient>
+                                        </defs>
+                                        <path fill="url(#logosAngularIcon0)"
+                                            d="m256 45.179l-9.244 145.158L158.373 0zm-61.217 187.697l-66.782 38.105l-66.784-38.105L74.8 199.958h106.4zM128.001 72.249l34.994 85.076h-69.99zM9.149 190.337L0 45.179L97.627 0z">
+                                        </path>
+                                        <path fill="url(#logosAngularIcon1)"
+                                            d="m256 45.179l-9.244 145.158L158.373 0zm-61.217 187.697l-66.782 38.105l-66.784-38.105L74.8 199.958h106.4zM128.001 72.249l34.994 85.076h-69.99zM9.149 190.337L0 45.179L97.627 0z">
+                                        </path>
+                                    </svg>
+                                </div>
+
+                                <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
+                                    <p class="text-gray-700 dark:text-gray-300">Amet praesentium deserunt ex commodi
+                                        tempore fuga voluptatem. Sit, sapiente.</p>
+                                </div>
+                                <div class="flex gap-3 -mb-8 py-4 border-t border-gray-200 dark:border-gray-800">
+                                    <a href="#" download="/"
+                                        class="group rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-950 bg-gray-100 hover:bg-gray-200/75 active:bg-gray-100 dark:text-white dark:bg-gray-500/10 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/10 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center">
+                                        <span>Download</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" d="m17 13l-5 5m0 0l-5-5m5 5V6">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                    <a href="#"
+                                        class="group flex items-center rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-950 bg-gray-100 hover:bg-gray-200/75 active:bg-gray-100 dark:text-white dark:bg-gray-500/10 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/10 size-8 justify-center">
+                                        <span class="sr-only">Source Code</span>
+                                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="relative group overflow-hidden duration-300 p-8 rounded-2xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                            <div aria-hidden="true"
+                                class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/3 duration-300 bg-gradient-to-b from-gray-500 to-white dark:from-white dark:to-white blur-2xl group-hover:opacity-50 opacity-25 dark:opacity-5 dark:group-hover:opacity-10">
+                            </div>
+                            <div class="relative">
+                                <div
+                                    class="border border-gray-500/10 flex relative *:relative *:size-6 *:m-auto  text-gray-950 dark:text-white size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                        viewBox="0 0 15 15">
+                                        <path fill="currentColor"
+                                            d="m4.5 4.5l.405-.293A.5.5 0 0 0 4 4.5zm3 9.5A6.5 6.5 0 0 1 1 7.5H0A7.5 7.5 0 0 0 7.5 15zM14 7.5A6.5 6.5 0 0 1 7.5 14v1A7.5 7.5 0 0 0 15 7.5zM7.5 1A6.5 6.5 0 0 1 14 7.5h1A7.5 7.5 0 0 0 7.5 0zm0-1A7.5 7.5 0 0 0 0 7.5h1A6.5 6.5 0 0 1 7.5 1zM5 12V4.5H4V12zm-.905-7.207l6.5 9l.81-.586l-6.5-9zM10 4v6h1V4z">
+                                        </path>
+                                    </svg>
+                                </div>
+
+                                <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
+                                    <p class="text-gray-700 dark:text-gray-300">Amet praesentium deserunt ex commodi
+                                        tempore fuga voluptatem. Sit, sapiente.</p>
+                                </div>
+                                <div class="flex gap-3 -mb-8 py-4 border-t border-gray-200 dark:border-gray-800">
+                                    <a href="#" download="/"
+                                        class="group rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-950 bg-gray-100 hover:bg-gray-200/75 active:bg-gray-100 dark:text-white dark:bg-gray-500/10 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/10 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center">
+                                        <span>Download</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" d="m17 13l-5 5m0 0l-5-5m5 5V6">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                    <a href="#"
+                                        class="group flex items-center rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-950 bg-gray-100 hover:bg-gray-200/75 active:bg-gray-100 dark:text-white dark:bg-gray-500/10 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/10 size-8 justify-center">
+                                        <span class="sr-only">Source Code</span>
+                                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="relative group overflow-hidden duration-300 p-8 rounded-2xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                            <div aria-hidden="true"
+                                class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/3 duration-300 bg-gradient-to-b from-yellow-500 to-white dark:from-white dark:to-white blur-2xl group-hover:opacity-50 opacity-25 dark:opacity-5 dark:group-hover:opacity-10">
+                            </div>
+                            <div class="relative">
+                                <div
+                                    class="border border-yellow-500/10 flex relative *:relative *:size-6 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-yellow-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="0.73em" height="1em"
+                                        viewBox="0 0 256 351">
+                                        <defs>
+                                            <filter id="logosFirebase0" width="200%" height="200%" x="-50%" y="-50%"
+                                                filterUnits="objectBoundingBox">
+                                                <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1"
+                                                    stdDeviation="17.5"></feGaussianBlur>
+                                                <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+                                                <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1"
+                                                    operator="arithmetic" result="shadowInnerInner1"></feComposite>
+                                                <feColorMatrix in="shadowInnerInner1"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"></feColorMatrix>
+                                            </filter>
+                                            <filter id="logosFirebase1" width="200%" height="200%" x="-50%" y="-50%"
+                                                filterUnits="objectBoundingBox">
+                                                <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1"
+                                                    stdDeviation="3.5"></feGaussianBlur>
+                                                <feOffset dx="1" dy="-9" in="shadowBlurInner1"
+                                                    result="shadowOffsetInner1"></feOffset>
+                                                <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1"
+                                                    operator="arithmetic" result="shadowInnerInner1"></feComposite>
+                                                <feColorMatrix in="shadowInnerInner1"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0"></feColorMatrix>
+                                            </filter>
+                                            <path id="logosFirebase2"
+                                                d="m1.253 280.732l1.605-3.131l99.353-188.518l-44.15-83.475C54.392-1.283 45.074.474 43.87 8.188z">
+                                            </path>
+                                            <path id="logosFirebase3"
+                                                d="m134.417 148.974l32.039-32.812l-32.039-61.007c-3.042-5.791-10.433-6.398-13.443-.59l-17.705 34.109l-.53 1.744z">
+                                            </path>
+                                        </defs>
+                                        <path fill="#ffc24a"
+                                            d="m0 282.998l2.123-2.972L102.527 89.512l.212-2.017L58.48 4.358C54.77-2.606 44.33-.845 43.114 6.951z">
+                                        </path>
+                                        <use fill="#ffa712" fill-rule="evenodd" href="#logosFirebase2"></use>
+                                        <use filter="url(#logosFirebase0)" href="#logosFirebase2"></use>
+                                        <path fill="#f4bd62"
+                                            d="m135.005 150.38l32.955-33.75l-32.965-62.93c-3.129-5.957-11.866-5.975-14.962 0L102.42 87.287v2.86z">
+                                        </path>
+                                        <use fill="#ffa50e" fill-rule="evenodd" href="#logosFirebase3"></use>
+                                        <use filter="url(#logosFirebase1)" href="#logosFirebase3"></use>
+                                        <path fill="#f6820c"
+                                            d="m0 282.998l.962-.968l3.496-1.42l128.477-128l1.628-4.431l-32.05-61.074z">
+                                        </path>
+                                        <path fill="#fde068"
+                                            d="m139.121 347.551l116.275-64.847l-33.204-204.495c-1.039-6.398-8.888-8.927-13.468-4.34L0 282.998l115.608 64.548a24.126 24.126 0 0 0 23.513.005">
+                                        </path>
+                                        <path fill="#fcca3f"
+                                            d="M254.354 282.16L221.402 79.218c-1.03-6.35-7.558-8.977-12.103-4.424L1.29 282.6l114.339 63.908a23.943 23.943 0 0 0 23.334.006z">
+                                        </path>
+                                        <path fill="#eeab37"
+                                            d="M139.12 345.64a24.126 24.126 0 0 1-23.512-.005L.931 282.015l-.93.983l115.607 64.548a24.126 24.126 0 0 0 23.513.005l116.275-64.847l-.285-1.752z">
+                                        </path>
+                                    </svg>
+                                </div>
+
+                                <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
+                                    <p class="text-gray-700 dark:text-gray-300">Amet praesentium deserunt ex commodi
+                                        tempore fuga voluptatem. Sit, sapiente.</p>
+                                </div>
+                                <div class="flex gap-3 -mb-8 py-4 border-t border-gray-200 dark:border-gray-800">
+                                    <a href="#" download="/"
+                                        class="group rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-950 bg-gray-100 hover:bg-gray-200/75 active:bg-gray-100 dark:text-white dark:bg-gray-500/10 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/10 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center">
+                                        <span>Download</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" d="m17 13l-5 5m0 0l-5-5m5 5V6">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                    <a href="#"
+                                        class="group flex items-center rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-950 bg-gray-100 hover:bg-gray-200/75 active:bg-gray-100 dark:text-white dark:bg-gray-500/10 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/10 size-8 justify-center">
+                                        <span class="sr-only">Source Code</span>
+                                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="relative group overflow-hidden duration-300 p-8 rounded-2xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                            <div aria-hidden="true"
+                                class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/3 duration-300 bg-gradient-to-b from-sky-500 to-white dark:from-white dark:to-white blur-2xl group-hover:opacity-50 opacity-25 dark:opacity-5 dark:group-hover:opacity-10">
+                            </div>
+                            <div class="relative">
+                                <div
+                                    class="border border-sky-500/10 flex relative *:relative *:size-6 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-sky-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                        viewBox="0 0 128 128">
+                                        <path fill="#0080ff"
+                                            d="M64.142 102.96H39.24V78.522h24.903ZM39.24 122.131H20.373v-19.173H39.24Zm-18.866-19.173H4.53V87.167h15.843Zm43.394 24.814v-24.814c26.41 0 46.784-25.94 36.597-53.388c-3.775-10.15-11.694-18.42-22.26-22.181c-27.167-9.772-53.2 10.527-53.2 36.468H0c0-41.354 40.37-74.064 84.52-60.53c19.242 6.017 34.334 21.055 40.37 40.23c13.581 43.985-19.245 84.214-61.123 84.214Zm0 0">
+                                        </path>
+                                    </svg>
+                                </div>
+
+                                <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
+                                    <p class="text-gray-700 dark:text-gray-300">Amet praesentium deserunt ex commodi
+                                        tempore fuga voluptatem. Sit, sapiente.</p>
+                                </div>
+                                <div class="flex gap-3 -mb-8 py-4 border-t border-gray-200 dark:border-gray-800">
+                                    <a href="#" download="/"
+                                        class="group rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-950 bg-gray-100 hover:bg-gray-200/75 active:bg-gray-100 dark:text-white dark:bg-gray-500/10 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/10 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center">
+                                        <span>Download</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" d="m17 13l-5 5m0 0l-5-5m5 5V6">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                    <a href="#"
+                                        class="group flex items-center rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-950 bg-gray-100 hover:bg-gray-200/75 active:bg-gray-100 dark:text-white dark:bg-gray-500/10 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/10 size-8 justify-center">
+                                        <span class="sr-only">Source Code</span>
+                                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- tech approach -->
+        <div class="relative py-5">
+            <div aria-hidden="true"
+                class="absolute inset-0 top-1/2 grid grid-cols-2 -space-x-52 opacity-50 dark:opacity-50">
+                <div class="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"></div>
+                <div class="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600">
+                </div>
+            </div>
+            <div class="relative mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
+                <div class="text-center">
+                    <h2 class="text-3xl font-semibold text-gray-800 dark:text-gray-200 xl:text-4xl">A
+                        technology-first
+                        approach</h2>
+                    <p class="mx-auto mt-6 text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">A growing team doesn't
+                        need
+                        to mean growing pains. Privacy, and the right tool for every step of your journey - Jira
+                        Software
+                        friction - company size.</p>
+                </div>
+                <div class="mt-16 grid gap-8 sm:mx-auto sm:w-2/3 md:w-full md:grid-cols-2 lg:grid-cols-3">
+                    <div
+                        class="rounded-3xl border border-gray-100 cursor-context-menu dark:hover:bg-transparent dark:hover:brightness-125 hover:bg-blue-500 hover:text-white text-gray-800 dark:text-gray-100 duration-700 dark:hover:border-gray-400 hover:scale-105 bg-white p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-900 dark:shadow-none sm:p-12">
+                        <div class="space-y-12 text-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/584/584796.png" class="mx-auto h-14 w-auto"
+                                width="512" height="512" alt="burger illustration">
+                            <div class="space-y-6">
+                                <h3 class="text-2xl font-semibold">First
+                                    feature
+                                </h3>
+                                <p class="">Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Saepe nesciunt neque culpa hic illum ab qui error repellendus
+                                    asperiores unde ut ipsam perferendis nemo fuga cum, eum consectetur, magnam
+                                    doloremque!
+                                </p>
+                                <a href=""
+                                    class="flex w-12 h-12 bg-gray-100 dark:bg-blue-900 hover:dark:bg-blue-800 hover:bg-blue-100 hover:scale-125 duration-500 mt-3 items-center justify-center mx-auto rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        class="relative h-5 w-5 text-gray-600 transition duration-300 group-hover:translate-x-1 dark:text-white">
+                                        <path fill-rule="evenodd"
+                                            d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-3xl border border-gray-100 cursor-context-menu dark:hover:bg-transparent dark:hover:brightness-125 hover:bg-blue-500 hover:text-white text-gray-800 dark:text-gray-100 duration-700 dark:hover:border-gray-400 hover:scale-105 bg-white p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-900 dark:shadow-none sm:p-12">
+                        <div class="space-y-12 text-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/6106/6106288.png"
+                                class="mx-auto h-14 w-auto" width="512" height="512" alt="burger illustration">
+                            <div class="space-y-6">
+                                <h3 class="text-2xl font-semibold">Second
+                                    feature
+                                </h3>
+                                <p class="">Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Saepe nesciunt neque culpa hic illum ab qui error repellendus
+                                    asperiores unde ut ipsam perferendis nemo fuga cum, eum consectetur, magnam
+                                    doloremque!
+                                </p>
+                                <a href=""
+                                    class="flex w-12 h-12 bg-gray-100 dark:bg-blue-900 hover:dark:bg-blue-800 hover:bg-blue-100 hover:scale-125 duration-500 mt-3 items-center justify-center mx-auto rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        class="relative h-5 w-5 text-gray-600 transition duration-300 group-hover:translate-x-1 dark:text-white">
+                                        <path fill-rule="evenodd"
+                                            d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-3xl border border-gray-100 cursor-context-menu dark:hover:bg-transparent dark:hover:brightness-125 hover:bg-blue-500 hover:text-white text-gray-800 dark:text-gray-100 duration-700 dark:hover:border-gray-400 hover:scale-105 bg-white p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-900 dark:shadow-none sm:p-12">
+                        <div class="space-y-12 text-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4727/4727266.png"
+                                class="mx-auto h-14 w-auto" width="512" height="512" alt="burger illustration">
+                            <div class="space-y-6">
+                                <h3 class="text-2xl font-semibold">Third
+                                    feature
+                                </h3>
+                                <p class="">Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Saepe nesciunt neque culpa hic illum ab qui error repellendus
+                                    asperiores unde ut ipsam perferendis nemo fuga cum, eum consectetur, magnam
+                                    doloremque!
+                                </p>
+                                <a href=""
+                                    class="flex w-12 h-12 bg-gray-100 dark:bg-blue-900 hover:dark:bg-blue-800 hover:bg-blue-100 hover:scale-125 duration-300 mt-3 items-center justify-center mx-auto rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        class="relative h-5 w-5 text-gray-600 transition duration-300 group-hover:translate-x-1 dark:text-white">
+                                        <path fill-rule="evenodd"
+                                            d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Satisfied customers -->
+        <section class="my-20">
+            <div class="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
+                <div class="text-center">
+                    <h2 class="text-3xl font-semibold text-gray-800 dark:text-white xl:text-4xl">
+                        Satisfied customers
+                    </h2>
+                    <p class="mx-auto mt-6 text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">A growing team doesn't
+                        need
+                        to mean growing pains. Privacy, and the right tool for every step of your journey - Jira
+                        Software
+                        friction - company size.</p>
+                </div>
+                <div class="mt-12 grid gap-8 md:grid-cols-2">
+                    <div
+                        class="rounded-3xl border border-gray-300 hover:shadow-gray-300 duration-500 bg-white p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-900 dark:shadow-none sm:col-span-2 sm:px-12 lg:col-span-1 lg:row-span-2">
+                        <div class="flex h-full flex-col justify-center space-y-6 md:space-y-8">
+                            <img class="mr-auto h-12 w-auto" src="../public/img/microsoft.svg" loading="lazy"
+                                alt="microsoft">
+                            <p class="text-gray-600 dark:text-gray-300 md:text-lg lg:text-xl">
+                                <span class="font-serif">"</span> Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit.
+                                Quaerat repellat perspiciatis excepturi est. Non ipsum iusto aliquam consequatur
+                                repellat
+                                provident, omnis ut, sapiente voluptates veritatis cum deleniti repudiandae ad
+                                doloribus.
+                                <br>
+                                <br>
+                                Esse, sint sit aut ducimus ea ipsam velit saepe earum dolorem, dignissimos minima
+                                voluptate
+                                quo accusamus corporis, quaerat beatae aliquid. Impedit, accusamus. <span
+                                    class="font-serif">"</span>
+                            </p>
+                            <div class="flex items-center gap-3">
+                                <img class="h-12 w-12 rounded-full object-cover"
+                                    src="data:image/jpeg;base64,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"
+                                    loading="lazy" alt="user avatar" width="200" height="200">
+                                <div>
+                                    <h3 class="text-lg font-semibold leading-none text-gray-600 dark:text-gray-200">Andy
+                                        Doe
+                                    </h3>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">Product Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="space-y-6 rounded-3xl border border-gray-300 hover:shadow-gray-300 duration-500 bg-white p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-900 dark:shadow-none">
+                        <img class="w-32" src="../public/img/discord.png" loading="lazy" alt="" width="" height="">
+                        <p class="text-gray-600 dark:text-gray-300"><span class="font-serif">"</span>Sit amet
+                            consectetur
+                            adipisicing elit. Quaerat repellat perspiciatis excepturi est. Provident, omnis ut, sapiente
+                            veritatis cum deleniti repudiandae ad doloribus. <span class="font-serif">"</span></p>
+                        <div class="flex items-center gap-3 text-left">
+                            <img class="h-12 w-12 rounded-full object-cover"
+                                src="data:image/jpeg;base64,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"
+                                alt="user avatar" width="200" height="200" loading="lazy">
+                            <div>
+                                <h3 class="text-lg font-semibold leading-none text-gray-600 dark:text-gray-200">Janet
+                                    Doe
+                                </h3>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">UX Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="space-y-6 rounded-3xl border border-gray-300 hover:shadow-gray-300 duration-500 bg-white p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-900 dark:shadow-none">
+                        <img class="w-28" src="../public/img/linkedIn.png" loading="lazy" alt="ge">
+                        <p class="text-gray-600 dark:text-gray-300"><span class="font-serif">"</span>Sit amet
+                            consectetur
+                            adipisicing elit. Quaerat repellat perspiciatis excepturi est. Provident, omnis ut, sapiente
+                            veritatis cum deleniti repudiandae ad doloribus. <span class="font-serif">"</span></p>
+                        <div class="flex items-center gap-3 text-left">
+                            <img class="h-12 w-12 rounded-full object-cover"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKi6_c0KY9dVm9rJQtiiRupif65nY5OFU3Ww&usqp=CAU"
+                                alt="user avatar" width="200" height="200" loading="lazy">
+                            <div>
+                                <h3 class="text-lg font-semibold leading-none text-gray-600 dark:text-gray-200">John Doe
+                                </h3>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Product Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
 
     <script>
+        // alert
         const alert = document.querySelector("#alert")
         const accept = document.querySelector("#accept")
         accept.onclick = function (event) {
@@ -129,6 +797,7 @@
             alert.classList.add("hidden")
         }
 
+        // dark mode
         const darkMode = document.querySelector("#darkMode")
         const darkIcon = document.querySelector("#darkIcon")
         const body = document.querySelector("#body")
@@ -146,6 +815,38 @@
                 darkIcon.classList.add("bi-brightness-high-fill")
             }
         }
+
+        // menu 
+        const menuBtn = document.querySelector("#menuBtn")
+        const menuClose = document.querySelector("#menuClose")
+        const menu = document.querySelector("#menu")
+        const menuList = document.querySelector("#menuList")
+        const navbar = document.querySelector("#navbar")
+        const menuIcons = document.querySelectorAll(".menuIcon");
+        const menuIcons2 = document.querySelectorAll(".menuIcon2");
+
+        menuBtn.onclick = function (event) {
+            menu.classList.remove("-z-50", "opacity-0", "backdrop-blur-none")
+            menu.classList.add("z-50", "backdrop-blur-xl")
+            menuList.classList.remove("-translate-y-96")
+            navbar.classList.add("opacity-0")
+            menuIcons.forEach(icon => icon.classList.remove("scale-0")); // Scale up the icons
+            menuIcons2.forEach(icon => icon.classList.remove("scale-0")); // Scale up the icons
+        }
+        menuClose.onclick = function (event) {
+            menu.classList.add("-z-50", "opacity-0", "backdrop-blur-none")
+            menu.classList.remove("z-50", "backdrop-blur-xl")
+            menuList.classList.add("-translate-y-96")
+            navbar.classList.remove("opacity-0")
+            menuIcons.forEach(icon => icon.classList.add("scale-0")); // Scale up the icons
+            menuIcons2.forEach(icon => icon.classList.add("scale-0")); // Scale up the icons
+        }
+
+
+
+
+
+
     </script>
 </body>
 
